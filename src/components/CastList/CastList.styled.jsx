@@ -41,3 +41,7 @@ export const Character = styled.p`
   font-style: italic;
   text-align: center;
 `;
+
+export const Container = styled.div`
+  margin-top: 16px;
+`;

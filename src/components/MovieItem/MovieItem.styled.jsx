@@ -10,11 +10,15 @@ export const Item = styled.li`
 
   &:hover {
     transform: scale(1.03);
-    cursor: zoom-in;
+    cursor: pointer;
   }
 `;
 
 export const Movie = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   color: #000;
   text-decoration: none;
 `;

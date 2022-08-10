@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTrending } from 'service';
 import { MoviesList } from 'components';
-import { Container } from './Home.styled';
+import { Title } from './Home.styled';
 
 export const Home = () => {
   const [movies, setMovies] = useState(null);
@@ -12,7 +12,8 @@ export const Home = () => {
 
   return (
     <main>
-      <Container>{movies && <MoviesList movies={movies.results} />}</Container>
+      <Title>Trending today</Title>
+      {movies && <MoviesList movies={movies.results} />}
     </main>
   );
 };

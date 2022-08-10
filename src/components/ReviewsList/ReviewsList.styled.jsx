@@ -6,10 +6,23 @@ export const Container = styled.div`
 
 export const List = styled.ul``;
 
-export const Item = styled.li``;
+export const Item = styled.li`
+  border-color: #000;
 
-export const Author = styled.h3``;
+  :not(:last-child) {
+    margin-bottom: 30px;
+  }
+`;
 
-export const Date = styled.span``;
+export const Author = styled.h3`
+  margin-bottom: 10px;
+`;
 
-export const Comment = styled.p``;
+export const Updated = styled.span`
+  font-weight: normal;
+  font-style: italic;
+`;
+
+export const Comment = styled.p`
+  padding-left: 16px;
+`;

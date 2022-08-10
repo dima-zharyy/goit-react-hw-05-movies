@@ -4,21 +4,32 @@ import {
   Item,
   Author,
   Comment,
-  Date,
+  Updated,
 } from './ReviewsList.styled';
 
 export const ReviewsList = ({ reviews }) => {
+  if (reviews && reviews.length === 0) {
+    return (
+      <Container>
+        <h3>There are no reviews on the movie</h3>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <List>
         {reviews &&
-          reviews.map(review => {
+          reviews.map(({ id, author, updated_at, content }) => {
             return (
-              <Item key={review.id}>
+              <Item key={id}>
                 <Author>
-                  {review.author} <Date>{review.updated_at}</Date>
+                  {author}{' '}
+                  <Updated>{`- posted on ${new Date(
+                    updated_at
+                  ).toLocaleDateString()}`}</Updated>
                 </Author>
-                <Comment>{review.content}</Comment>
+                <Comment>{content}</Comment>
               </Item>
             );
           })}

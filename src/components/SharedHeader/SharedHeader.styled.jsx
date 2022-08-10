@@ -10,6 +10,7 @@ export const Menu = styled.header`
   justify-content: flex-start;
   align-items: center;
   min-height: 64px;
+  margin-bottom: 16px;
   padding-right: 24px;
   padding-left: 24px;
   padding-top: 12px;
@@ -31,11 +32,9 @@ export const Link = styled(NavLink)`
 
   &.active {
     border-bottom: 2px solid #f4f74b;
-    cursor: default;
-    pointer-events: none;
   }
 
-  &:hover:not(.active) {
+  &:hover {
     color: #f4f74b;
   }
 `;

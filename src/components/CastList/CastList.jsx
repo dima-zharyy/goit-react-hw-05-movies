@@ -1,8 +1,23 @@
-import { List, Profile, Name, Character, Item } from './CastList.styled';
+import {
+  List,
+  Profile,
+  Name,
+  Character,
+  Item,
+  Container,
+} from './CastList.styled';
 
 export const CastList = ({ castInfo }) => {
   const imgUrl = `https://image.tmdb.org/t/p/w500/`;
   const imgPlaceholder = `https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`;
+
+  if (castInfo && castInfo.length === 0) {
+    return (
+      <Container>
+        <h3>There is no cast info on the movie</h3>
+      </Container>
+    );
+  }
 
   return (
     <List>
