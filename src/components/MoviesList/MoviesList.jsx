@@ -1,8 +1,9 @@
 import { MovieItem } from 'components';
+import { List } from './MoviesList.styled';
 
 export const MoviesList = ({ movies }) => {
   return (
-    <ul>
+    <List>
       {movies.map(movie => {
         const { id, poster_path, title } = movie;
 
@@ -10,6 +11,6 @@ export const MoviesList = ({ movies }) => {
           <MovieItem key={id} id={id} poster_path={poster_path} title={title} />
         );
       })}
-    </ul>
+    </List>
   );
 };

@@ -1,19 +1,18 @@
 import { useState, useEffect } from 'react';
 import { getTrending } from 'service';
 import { MoviesList } from 'components';
+import { Container } from './Home.styled';
 
 export const Home = () => {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const moviesData = await getTrending();
-
-      setMovies(moviesData);
-    };
-
-    fetchMovies();
+    getTrending().then(setMovies);
   }, []);
 
-  return movies && <MoviesList movies={movies.results} />;
+  return (
+    <main>
+      <Container>{movies && <MoviesList movies={movies.results} />}</Container>
+    </main>
+  );
 };

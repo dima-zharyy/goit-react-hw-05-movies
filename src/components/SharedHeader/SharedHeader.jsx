@@ -1,15 +1,19 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Global } from '@emotion/react';
+import { globalStyle } from 'components';
+import { Menu, Link, Navigation } from './SharedHeader.styled';
 
 export const SharedHeader = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
-        </nav>
-      </header>
+    <>
+      <Global styles={globalStyle} />
+      <Menu>
+        <Navigation>
+          <Link to="/">Home</Link>
+          <Link to="/movies">Movies</Link>
+        </Navigation>
+      </Menu>
       <Outlet />
-    </div>
+    </>
   );
 };
