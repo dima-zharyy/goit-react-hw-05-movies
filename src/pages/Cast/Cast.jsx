@@ -10,7 +10,9 @@ export const Cast = () => {
   const [castInfo, setCastInfo] = useState(null);
 
   useEffect(() => {
-    getCredits(movieId).then(setCastInfo);
+    getCredits(movieId)
+      .then(setCastInfo)
+      .catch(error => console.log(error.message));
   }, [movieId]);
 
   return (

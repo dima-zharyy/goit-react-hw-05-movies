@@ -9,7 +9,9 @@ export const Reviews = () => {
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
-    getReviews(movieId).then(setReviews);
+    getReviews(movieId)
+      .then(setReviews)
+      .catch(error => console.log(error.message));
   }, [movieId]);
 
   return <ReviewsList reviews={reviews} />;

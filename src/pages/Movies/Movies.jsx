@@ -10,11 +10,9 @@ export const Movies = () => {
   const query = searchParams.get('query');
 
   useEffect(() => {
-    if (!query) {
-      return;
-    }
-
-    getMovies(query).then(setMovies);
+    getMovies(query)
+      .then(setMovies)
+      .catch(error => console.log(error.message));
   }, [query]);
 
   const handleSubmit = query => {

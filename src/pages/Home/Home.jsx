@@ -7,7 +7,9 @@ export const Home = () => {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    getTrending().then(setMovies);
+    getTrending()
+      .then(setMovies)
+      .catch(error => console.log(error.message));
   }, []);
 
   return (
