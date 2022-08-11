@@ -1,6 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { Home, Movies, Cast, MovieDetails, Reviews } from 'pages';
 import { SharedHeader } from 'components';
+import {
+  Home,
+  Movies,
+  MovieDetails,
+  Cast,
+  Reviews,
+} from 'helpers/lazyImportPages';
 
 export const App = () => {
   return (

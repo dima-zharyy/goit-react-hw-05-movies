@@ -1,6 +1,7 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Global } from '@emotion/react';
-import { globalStyle } from 'components';
+import { globalStyle, Loader } from 'components';
 import { Menu, Link, Navigation } from './SharedHeader.styled';
 
 export const SharedHeader = () => {
@@ -13,7 +14,9 @@ export const SharedHeader = () => {
           <Link to="/movies">Movies</Link>
         </Navigation>
       </Menu>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

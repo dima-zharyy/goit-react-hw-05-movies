@@ -9,3 +9,4 @@ export * from './GenresList/GenresList.jsx';
 export * from './CastList/CastList.jsx';
 export * from './ReviewsList/ReviewsList.jsx';
 export * from './SearchBar/SearchBar.jsx';
+export * from './Loader/Loader.jsx';

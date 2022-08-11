@@ -1,5 +1,5 @@
-import { Details } from 'components';
-import { useState, useEffect } from 'react';
+import { Details, Loader } from 'components';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import { getDetails } from 'service';
 import { Container } from './MovieDetails.styled';
@@ -17,7 +17,9 @@ export const MovieDetails = () => {
       <Container>
         {movieDetails && <Details movieDetails={movieDetails} />}
 
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </Container>
     </main>
   );
