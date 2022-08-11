@@ -9,7 +9,9 @@ export const MovieDetails = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    getDetails(movieId).then(setMovieDetails).catch(error => console.log(error.message));
+    getDetails(movieId)
+      .then(setMovieDetails)
+      .catch(error => console.log(error.message));
   }, [movieId]);
 
   return (

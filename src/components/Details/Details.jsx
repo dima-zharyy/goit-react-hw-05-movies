@@ -31,7 +31,7 @@ export const Details = ({ movieDetails }) => {
         <Text>{overview ? overview : `Sorry! There is no overview`}</Text>
         <Subtitle>Genres</Subtitle>
         <GenresList genres={genres} />
-        <AdditionalInfo />
+        <AdditionalInfo location={backLinkHref} />
         <BackLink to={backLinkHref}>go back</BackLink>
       </Wrapper>
     </Container>
