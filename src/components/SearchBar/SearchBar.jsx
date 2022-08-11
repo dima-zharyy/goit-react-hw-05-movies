@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form, Button, Input } from './SearchBar.styled';
 import { ImSearch } from 'react-icons/im';
 import PropTypes from 'prop-types';
+import { notify } from 'components';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -9,7 +10,13 @@ export const SearchBar = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    onSubmit(query.toLowerCase());
+    if (query.trim() === '') {
+      notify('Please type at least one letter!');
+      setQuery('');
+      return;
+    }
+
+    onSubmit(query.toLowerCase().trim());
 
     setQuery('');
   };

@@ -9,7 +9,7 @@ export const Menu = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 64px;
+  height: 72px;
   margin-bottom: 16px;
   padding-right: 24px;
   padding-left: 24px;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { SearchBar, MoviesList } from 'components';
+import { SearchBar, MoviesList, notify } from 'components';
 import { Container } from './Movies.styled';
 import { getMovies } from 'service';
 
@@ -15,7 +15,12 @@ export const Movies = () => {
     }
 
     getMovies(query)
-      .then(setMovies)
+      .then(data => {
+        setMovies(data);
+        if (data.length === 0) {
+          notify(`There is no result on query: ${query}`);
+        }
+      })
       .catch(error => console.log(error.message));
   }, [query]);
 

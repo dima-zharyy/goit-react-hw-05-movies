@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Form = styled.form`
   position: fixed;
-  top: 8px;
+  top: 12px;
   left: 50%;
   z-index: 15;
   transform: translateX(-50%);

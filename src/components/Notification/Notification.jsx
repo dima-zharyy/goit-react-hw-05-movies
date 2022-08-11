@@ -12,7 +12,7 @@ export const Notification = () => {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      style={{ top: 0 }}
+      style={{ top: 0, color: '#254e58' }}
     />
   );
 };
