@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import {
   Wrapper,
   Container,
@@ -5,11 +6,14 @@ import {
   Title,
   Text,
   Subtitle,
+  BackLink,
 } from './Details.styled';
-
 import { GenresList, AdditionalInfo } from 'components';
 
 export const Details = ({ movieDetails }) => {
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
+
   console.log(movieDetails);
   const { title, overview, vote_average, genres, poster_path } = movieDetails;
 
@@ -28,6 +32,7 @@ export const Details = ({ movieDetails }) => {
         <Subtitle>Genres</Subtitle>
         <GenresList genres={genres} />
         <AdditionalInfo />
+        <BackLink to={backLinkHref}>go back</BackLink>
       </Wrapper>
     </Container>
   );

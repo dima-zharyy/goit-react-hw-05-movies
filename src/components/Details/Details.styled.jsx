@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ export const Poster = styled.img`
 `;
 
 export const Wrapper = styled.div`
+  position: relative;
   max-width: 800px;
   margin-left: 20px;
   padding: 16px;
@@ -30,4 +32,26 @@ export const Text = styled.p`
 
 export const Subtitle = styled.h2`
   margin-bottom: 10px;
+`;
+
+export const BackLink = styled(NavLink)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+
+  color: #fff;
+  background-color: #254e5886;
+  text-decoration: none;
+
+  border-radius: 4px;
+  transition: all 250ms linear;
+
+  :hover {
+    background-color: #254e58;
+  }
 `;

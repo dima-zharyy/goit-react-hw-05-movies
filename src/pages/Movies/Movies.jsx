@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { SearchBar, MoviesList, LoadButton } from 'components';
+import { SearchBar, MoviesList } from 'components';
 import { Container } from './Movies.styled';
 import { getMovies } from 'service';
 
@@ -19,15 +19,17 @@ export const Movies = () => {
 
   const handleSubmit = query => {
     setSearchParams({ query });
-  };
 
-  const handleClick = () => {};
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <Container>
       <SearchBar onSubmit={handleSubmit} />
       {movies.length > 0 && <MoviesList movies={movies} />}
-      <LoadButton onClick={handleClick} />
     </Container>
   );
 };

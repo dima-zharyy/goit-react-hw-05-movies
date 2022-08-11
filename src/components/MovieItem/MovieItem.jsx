@@ -10,7 +10,7 @@ export const MovieItem = ({ id, poster_path, title }) => {
 
   return (
     <Item>
-      <Movie to={link}>
+      <Movie to={link} state={{ from: location }}>
         <Poster
           src={poster_path ? imgUrl : imgPlaceholder}
           alt={title}
