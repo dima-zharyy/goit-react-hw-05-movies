@@ -9,12 +9,12 @@ import {
   BackLink,
 } from './Details.styled';
 import { GenresList, AdditionalInfo } from 'components';
+import PropTypes from 'prop-types';
 
 export const Details = ({ movieDetails }) => {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
-  console.log(movieDetails);
   const { title, overview, vote_average, genres, poster_path } = movieDetails;
 
   const imgPlaceholder = `https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg`;
@@ -36,4 +36,14 @@ export const Details = ({ movieDetails }) => {
       </Wrapper>
     </Container>
   );
+};
+
+Details.propTypes = {
+  movieDetails: PropTypes.exact({
+    genres: PropTypes.arrayOf(PropTypes.object),
+    overview: PropTypes.string,
+    poster_path: PropTypes.string,
+    title: PropTypes.string,
+    vote_average: PropTypes.number,
+  }),
 };

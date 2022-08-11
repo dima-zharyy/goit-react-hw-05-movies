@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { List, Text, Item } from './GenresList.styled';
 
 export const GenresList = ({ genres }) => {
@@ -14,4 +15,8 @@ export const GenresList = ({ genres }) => {
         : `Sorry! There is no genres data`}
     </List>
   );
+};
+
+GenresList.propTypes = {
+  genres: PropTypes.arrayOf(PropTypes.object),
 };

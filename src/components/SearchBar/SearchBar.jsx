@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Form, Button, Input } from './SearchBar.styled';
 import { ImSearch } from 'react-icons/im';
+import PropTypes from 'prop-types';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -32,4 +33,8 @@ export const SearchBar = ({ onSubmit }) => {
       />
     </Form>
   );
+};
+
+SearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

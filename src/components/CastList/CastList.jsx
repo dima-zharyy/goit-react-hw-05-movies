@@ -6,6 +6,7 @@ import {
   Item,
   Container,
 } from './CastList.styled';
+import PropTypes from 'prop-types';
 
 export const CastList = ({ castInfo }) => {
   const imgUrl = `https://image.tmdb.org/t/p/w500/`;
@@ -39,4 +40,8 @@ export const CastList = ({ castInfo }) => {
         })}
     </List>
   );
+};
+
+CastList.propTypes = {
+  castInfo: PropTypes.arrayOf(PropTypes.object),
 };

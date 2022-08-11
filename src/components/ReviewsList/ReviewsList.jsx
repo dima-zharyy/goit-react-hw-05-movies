@@ -6,6 +6,7 @@ import {
   Comment,
   Updated,
 } from './ReviewsList.styled';
+import PropTypes from 'prop-types';
 
 export const ReviewsList = ({ reviews }) => {
   if (reviews && reviews.length === 0) {
@@ -36,4 +37,8 @@ export const ReviewsList = ({ reviews }) => {
       </List>
     </Container>
   );
+};
+
+ReviewsList.propTypes = {
+  reviews: PropTypes.arrayOf(PropTypes.object),
 };
