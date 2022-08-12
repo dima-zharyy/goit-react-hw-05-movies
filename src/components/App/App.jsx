@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import { SharedHeader, Notification, globalStyle, NotExist } from 'components';
+import { SharedHeader, Notification, globalStyle } from 'components';
 import {
   Home,
   Movies,
   MovieDetails,
   Cast,
   Reviews,
+  NotExist,
 } from 'helpers/lazyImportPages';
 import { Global } from '@emotion/react';
 import 'react-toastify/dist/ReactToastify.css';

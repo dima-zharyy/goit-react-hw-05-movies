@@ -34,3 +34,10 @@ export const Reviews = lazy(() =>
     default: module.Reviews,
   }))
 );
+
+export const NotExist = lazy(() =>
+  import('../pages/NotExist/NotExist.jsx').then(module => ({
+    ...module,
+    default: module.NotExist,
+  }))
+);
